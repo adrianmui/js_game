@@ -1,0 +1,17 @@
+.box {
+  border: 1px solid yellow;
+  background-color: black;
+}
+
+#container {
+  padding: 0;
+}
+
+.character {
+  background-color: #ffa500;
+  position: absolute;
+}
+
+li {
+ list-style-type: none;
+ }
