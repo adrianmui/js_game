@@ -7,9 +7,22 @@
   padding: 0;
 }
 
-.character {
-  background-color: #ffa500;
+.projectile {
   position: absolute;
+  background-color: white;
+  border: 1px solid;
+}
+
+.character {
+  position: absolute;
+}
+
+#boss {
+  background-color: red;
+}
+
+#player {
+  background-color: #ffa500;
 }
 
 li {

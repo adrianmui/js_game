@@ -10,16 +10,40 @@ var controller = {
       boss: this.model.boss.data,
       proj: this.model.projectiles
     };
+
     this.view.render(coords);
 
     var thatView = this.view;
     var thatController = this;
-    // var play = setInterval( function(e) {
+
+    //play loop
+    var play = setInterval( function(e) {
+
+      // pass in data model
+
+      coords = {
+      player: this.model.hero.data,
+      boss: this.model.boss.data,
+      proj: this.model.projectiles
+      }
       
-    //   }
-    // }, 200);
+      thatController.movePlayer();
+      thatController.model.projectiles.forEach( function(el) {
+        el.live();
+      });
+
+
+
+      thatController.view.clear();
+      this.view.render(coords);      
+    }, 200);
 
     
 
   },
+
+    movePlayer: function(){
+    var direction = this.view.keyPress;
+    this.model.hero.move(direction);
+  }
 }
